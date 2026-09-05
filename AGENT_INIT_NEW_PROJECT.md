@@ -13,7 +13,7 @@ This guide is intended for AI coding agents. Read all instructions carefully and
 
 ---
 
-## Step 0: Prérequis de l'environnement
+## Step : Prérequis de l'environnement
 Vérifie que les pré-requis suivants sont installés
 
 1. Node.js v22+
@@ -26,11 +26,28 @@ Vérifie que les pré-requis suivants sont installés
 1. Use **`pnpm`** as the exclusive package manager. Do not use `npm` or `yarn`.
 2. Ensure Node.js (LTS) and `pnpm` are properly configured in the workspace.
 
+
+
+## Step: Angular 22 Project Initialization with pnpm
+
+Ask the user for the project name (default: `my-angular-app`).
+
+1. Prompt the user for `<PROJECT_NAME>`.
+2. Check if a directory with this name already exists.
+**If it does not exist:** Ask the user whether they want to create it (`[y/N]`)
+3. Check if `<PROJECT_NAME>` already contains an Angular project (`angular.json` or `@angular/core` in `package.json`).
+4. **If already an Angular project:** Inform the user, skip project creation, and navigate to the projetc directory.
+5. **If directory exists but is NOT an Angular project:** Warn the user and ask for confirmation before scaffolding.
+6. **If directory does not exist:**  Create an Angular app with Angular version 22 **mandatory**, Standalone components, native CSS, standard routing, no SSR, and `pnpm` as the package manager.
+7. Navigate into the newly created directory.
+
+
 ## Step : Download Configuration Templates
 
-Ask the user for the target project directory path `<TARGET_DIR>` (default: `.`).
-Check if the directory `<TARGET_DIR>` alreayd exists
-**If it does not exist:** Ask the user whether they want to create it (`[y/N]`)
+<!-- Il n'y a plus besion de demander la création car c'est fait avec le projet Angular créé avant  -->
+<!-- Ask the user for the target project directory path `<TARGET_DIR>` (default: `.`).
+Check if the directory `<TARGET_DIR>` already exists
+**If it does not exist:** Ask the user whether they want to create it (`[y/N]`) -->
 
 For each target file:
 1. Check if the file already exists in `<TARGET_DIR>`.
@@ -44,14 +61,9 @@ For each target file:
 | `https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/.gitignore-template` | `<TARGET_DIR>/.gitignore` |
 | `https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md` | `<TARGET_DIR>/.agents/AGENTS.md` |
 
-<!-- ### Execution Instructions for the Agent
 
-1. Create directory `<TARGET_DIR>/.agents` if it does not exist.
-2. Download `.gitignore-template` and save it as `<TARGET_DIR>/.gitignore`.
-3. Download `AGENTS-template.md` and save it as `<TARGET_DIR>/.agents/AGENTS.md`. -->
-
-<!-- ## Step — Get the .gitignore
-
+<!--
+ ## Step — Get the .gitignore
 ```bash
 curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/.gitignore-template -o .gitignore
 ```
@@ -63,9 +75,12 @@ mkdir -p .agents
 curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md -o AGENTS.md
 ``` -->
 
+
+<!-- temporairement je désactive ça  -->
 ## Step: Git Repository Initialization
 
-Ask the user for the project target directory (`TARGET_DIR`, default: `.`).
+<!-- Il n'y a plus besoin de demander la création car c'est fait avec le projet Angular créé avant  -->
+<!-- Ask the user for the project target directory (`TARGET_DIR`, default: `.`). -->
 
 The agent must ensure that a Git repository is initialized in `<TARGET_DIR>`:
 
@@ -73,5 +88,6 @@ The agent must ensure that a Git repository is initialized in `<TARGET_DIR>`:
 2. If not initialized, run `git init` with the default initial branch set to `main`.
 
 
-## Step X - Supabase CLI  et init
-Vérifie que Supabase CLI est installé (pnpm add -g supabase ou via Scoop/Brew)
+<!-- Pour l'instant on ne gère pas supabase dans l'installation de base. -->
+<!-- ## Step X - Supabase CLI  et init
+Vérifie que Supabase CLI est installé (pnpm add -g supabase ou via Scoop/Brew) -->
