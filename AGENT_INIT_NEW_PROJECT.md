@@ -6,7 +6,7 @@ This guide is intended for AI coding agents. Read all instructions carefully and
 
 ## Agent Instructions & Persona
 
-- Execute steps sequentially.
+- Execute steps sequentially. And display the step title.
 - Verify requirements and file contents after creation.
 - Adhere strictly to the technical stack, zero-secret policy, and file path constraints.
 - **Absolute Rule on Markdown Files:** In all generated Markdown files (`specs/`, `proposals/`, `tasks/`, `docs/`, `adr/`), **NEVER** write absolute file paths (e.g. `file:///...`, `C:\...`, or `/Users/...`). Always use **relative paths** from the repository root (e.g. `src/app/core/services/...`).
@@ -21,15 +21,22 @@ Vérifie que les pré-requis suivants sont installés
 
 3. Si ce n'est pas le cas : on s'arrête là. stop and tell the user to install or upgrade
 
-## Step 1: Package Manager & Environment Setup
+## Step : Package Manager & Environment Setup
 
 1. Use **`pnpm`** as the exclusive package manager. Do not use `npm` or `yarn`.
 2. Ensure Node.js (LTS) and `pnpm` are properly configured in the workspace.
 
-## Step 2 — Clone This Repository
+## Step — Get the .gitignore
 
 ```bash
-git clone https://github.com/briensbe/boostrap-template.git /tmp/boostrap-template
+curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/.gitignore-template -o .gitignore
+```
+
+## Step — Get the AGENTS.md
+### Créer le dossier .agents s'il n'existe pas et y télécharger AGENTS.md
+```bash
+mkdir -p .agents
+curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md -o AGENTS.md
 ```
 
 ## Step 2: Initialize Git Configuration (`.gitignore`)
