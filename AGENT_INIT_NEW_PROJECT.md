@@ -26,7 +26,31 @@ Vérifie que les pré-requis suivants sont installés
 1. Use **`pnpm`** as the exclusive package manager. Do not use `npm` or `yarn`.
 2. Ensure Node.js (LTS) and `pnpm` are properly configured in the workspace.
 
-## Step — Get the .gitignore
+## Step : Download Configuration Templates
+
+Ask the user for the target project directory path `<TARGET_DIR>` (default: `.`).
+Check if the directory `<TARGET_DIR>` alreayd exists
+**If it does not exist:** Ask the user whether they want to create it (`[y/N]`)
+
+For each target file:
+1. Check if the file already exists in `<TARGET_DIR>`.
+2. **If it exists:** Ask the user whether they want to overwrite it (`[y/N]`), keep the current version, or append missing sections.
+3. **If it does not exist:** Download and create the file automatically.
+
+### Target Files Map 
+
+| Remote Source URL | Local Target Path |
+| :--- | :--- |
+| `https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/.gitignore-template` | `<TARGET_DIR>/.gitignore` |
+| `https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md` | `<TARGET_DIR>/.agents/AGENTS.md` |
+
+<!-- ### Execution Instructions for the Agent
+
+1. Create directory `<TARGET_DIR>/.agents` if it does not exist.
+2. Download `.gitignore-template` and save it as `<TARGET_DIR>/.gitignore`.
+3. Download `AGENTS-template.md` and save it as `<TARGET_DIR>/.agents/AGENTS.md`. -->
+
+<!-- ## Step — Get the .gitignore
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/.gitignore-template -o .gitignore
@@ -37,9 +61,16 @@ curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/hea
 ```bash
 mkdir -p .agents
 curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md -o AGENTS.md
-```
+``` -->
 
-## Step 2: Initialize Git Configuration (`.gitignore`)
+## Step: Git Repository Initialization
+
+Ask the user for the project target directory (`TARGET_DIR`, default: `.`).
+
+The agent must ensure that a Git repository is initialized in `<TARGET_DIR>`:
+
+1. Check if a `.git` directory already exists.
+2. If not initialized, run `git init` with the default initial branch set to `main`.
 
 
 ## Step X - Supabase CLI  et init
