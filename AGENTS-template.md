@@ -24,6 +24,10 @@
 - Ne JAMAIS insérer de chemins de fichiers absolus (ex: `file:///c:/...` ou `C:\...`) dans les fichiers Markdown.
 - Utiliser systématiquement des chemins relatifs par rapport à la racine du projet ou au fichier courant.
 
+## Spécifications & OpenSpec
+- **Langue :** Tous les artefacts OpenSpec (`proposal.md`, `specs/**/*.md`, `design.md`, `adr.md`, `tasks.md`) ainsi que la documentation technique doivent être obligatoirement rédigés en français.
+- **Structure OpenSpec :** Conserver les mots-clés et titres de sections structurels requis par le validateur OpenSpec (`## Why`, `## What Changes`, `## Capabilities`, `## Impact`, `## ADDED Requirements`, `### Requirement: ...`, `#### Scenario: ...`, `- **WHEN**`, `- **THEN**`, `- **GIVEN**`, `## Context`, `## Goals / Non-Goals`, `## Decisions`, `## Risks / Trade-offs`, `## Tasks`) tout en rédigeant l'intégralité du contenu, des explications, des critères et des tâches en langue française.
+
 ## Gestion du Versioning (.gitignore)
 - **Règle :** Ne jamais commiter de fichiers de logs (`*.log`), de dossiers de compilation (`dist/`, `.angular/`), de fichiers de configuration de secrets (`.env*`, `environment.ts`) ou de caches temporaires Supabase (`supabase/.temp/`).
 - **Action :** Initialiser systématiquement le projet avec le `.gitignore` standard incluant la protection des environnements et l'isolation des caches d'agents IA (`.claude/cache/`, `.bolt`, etc.).
