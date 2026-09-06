@@ -27,7 +27,6 @@ Vérifie que les pré-requis suivants sont installés
 2. Ensure Node.js (LTS) and `pnpm` are properly configured in the workspace.
 
 
-
 ## Step: Angular 22 Project Initialization with pnpm
 
 Ask the user for the project name (default: `my-angular-app`).
@@ -75,6 +74,8 @@ mkdir -p .agents
 curl -fsSL https://raw.githubusercontent.com/briensbe/boostrap-template/refs/heads/main/AGENTS-template.md -o AGENTS.md
 ``` -->
 
+## Step : Initialiser OpenSpec avec les schémas ADR (openspec-with-adr).
+Read this file: https://raw.githubusercontent.com/intent-driven-dev/openspec-schemas/refs/heads/main/AGENT_INSTALL.md and follow the instructions.
 
 <!-- temporairement je désactive ça  -->
 ## Step: Git Repository Initialization
